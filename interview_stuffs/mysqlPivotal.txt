@@ -1,0 +1,44 @@
+SELECT 
+  r.rep_name,
+   sum (case when r.name='Tinkesh' then s.quanity) as tinkesh
+FROM reps r
+INNER JOIN sales s
+  ON r.rep_id = s.rep_id
+INNER JOIN products p
+  ON s.prod_id = p.prod_id
+  
+  group by 
+  
+  
+  SELECT 
+  r.rep_name,
+  SUM(CASE WHEN Date_format(s.sale_date, '%Y-%M')= '2013-January' THEN s.quantity ELSE 0 END) AS `2013-January`,
+  SUM(CASE WHEN Date_format(s.sale_date, '%Y-%M')= '2013-February' THEN s.quantity ELSE 0 END) AS `2013-February`,
+  SUM(CASE WHEN Date_format(s.sale_date, '%Y-%M')= '2013-March' THEN s.quantity ELSE 0 END) AS `2013-March`,
+  SUM(CASE WHEN Date_format(s.sale_date, '%Y-%M')= '2013-April' THEN s.quantity ELSE 0 END) AS `2013-April`,
+  SUM(CASE WHEN Date_format(s.sale_date, '%Y-%M')= '2013-May' THEN s.quantity ELSE 0 END) AS `2013-May`
+FROM reps r
+INNER JOIN sales s
+  ON r.rep_id = s.rep_id
+INNER JOIN products p
+  ON s.prod_id = p.prod_id
+GROUP BY r.rep_name;
+
+
+
+
+select u.user_id,
+ sum(case when ph.type_name = 'home' then u.phone_num else NULL END) as home_phone,
+ sum(case when ph.type_name = 'office' then u.phone_num else NULL end) as office_phone,
+ sum(case when ph.type_name = 'corporate' then u.phone_num else NULL end) as corporate_phone,
+ sum(case when ph.type_name = 'extra' then u.phone_num else NULL end) as extra_phone
+from users u join phone_type ph on 
+ph.phone_type = u.phone_type 
+group by u.user_id
+
+select upper(s.Name) as Student,
+  sum(case when subject = 'jQuery' then marks else 0 end) jQuery,
+  sum(case when subject = 'PHP' then marks else 0 end) PHP,
+  sum(case when subject = 'Javascript' then marks else 0 end) JavaScript
+from student join self s on s.id = student.student_id
+group by student_id

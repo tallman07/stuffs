@@ -1,0 +1,17 @@
+Angular JS
+NodeJS
+Redis Cache
+Elastic Search
+MongoDB
+Solr Search
+jQuery
+Magento
+GIT
+SVN
+PUTTY
+bootStrap
+corePHP
+mySQL
+CDN
+composer
+JSON
