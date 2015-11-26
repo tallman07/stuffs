@@ -1,0 +1,22 @@
+What us resourceMode
+Get best selling products(addOrderedQty), setOrder('ordered_qty', 'desc')
+            ->addViewsCount();
+
+robot.txt
+bootstrap
+routing
+url rewrite
+
+layout -> output types
+
+Theme fallback
+
+depends keyword
+
+define resource in config
+
+structured and content block
+
+Magento order process 
+
+Magento invoice flow

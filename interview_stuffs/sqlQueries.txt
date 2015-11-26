@@ -1,0 +1,209 @@
+<?php
+
+$str = 'abcdefg';
+
+for ($i=1; $i<=strlen($str); $i++) {
+	echo $str[strlen($str) - $i];
+}
+$string = 'Mydons'; // string to be reversed
+$string_length = strlen($string); // finding string length
+$reversed_string = ''; // store the reversed string
+
+for($i=$string_length-1;$i>=0;$i--){ // iterating to reverse the string
+
+$reversed_string .= $string{$i};
+
+}
+
+$num = array();
+for ($i=1; $i<=10; $i++) {
+	array_push($num, $i);
+}
+$num1 = array(1,3,4,5,7,8,9,10);
+$arr = array();
+foreach ($num as $val) {
+	if (!in_array($val, $num1))
+	{
+		array_push($arr, $val);
+	}
+}
+
+print_r($arr);
+
+ID    person	aid
+1	tinkesh		0
+2	tarun		0
+3   deeksha		1
+4	Shila		1
+5	Rizban		2
+6	Amir		2
+
+
+deeksha	tinkesh
+Shila	tinkesh
+Rizban	tarun
+Amir	tarun
+
+SELECT t2.ID,t2.person as Traines, t1.person as trainer FROM `self` as t1 
+join `self` as t2 on t1.ID=t2.aid
+
+ID 	Person 	
+
+1	tinkesh
+2	tinkesh
+3	rizban
+4	user
+
+id		Person
+
+1,2		tinkesh
+3		rizban
+4		user
+
+select distinct (Person), GROUP_CONCAT(id) as IDs 
+from `self` group by `Person` order by `id`
+
+ID		gender
+
+1		M
+2		F
+3		M
+4		F
+
+update articles
+set `gender` = case when `gender`='M' then 'F' else 'M' end
+
+Update table set `column` = replace(URL, 'www.xyz.com', 'abc.com');
+
+select distinct(Salary) from employee order by Salary desc limit (n-1),1
+
+select max(Salary) from employee where Salary not in (select max(Salary) 
+from employee)
+
+SELECT (Salary), count(Salary) FROM employee group by Salary 
+having count(Salary) > 0 
+
+ALTER TABLE articles ADD FULLTEXT(body, title);
+
+SELECT * FROM articles WHERE MATCH(title, body) AGAINST ('PHP');
+SHOW TABLE STATUS WHERE Name = 'articles' 
+
+SELECT `Salary`, count(`Salary`) FROM `employee` GROUP by `Salary` 
+SELECT `Salary` as `sal`, count(`Salary`) FROM `employee` GROUP by `Salary` 
+having `Salary` <= 10000 
+
+SELECT * FROM table WHERE edit_date = DATE_SUB(DATE(NOW()), INTERVAL 7 DAY);
+
+SELECT DISTINCT 
+     parent_id, GROUP_CONCAT(DISTINCT child_id ORDER BY child_id) 
+	 AS child_id_list
+     FROM group_c
+     group by parent_id
+     ORDER BY parent_id
+	 
+	 substr(strstr('tinkeshk@chetu.com','@'), 1);
+	 
+	 $a=5; $b =10;
+
+echo 'Before swap $a = '.$a.' and $b = '.$b.'<br>';
+
+$a = $a+$b;
+
+$b = $a-$b;
+
+$a = $a-$b;
+
+echo 'After swap $a = '.$a.' and $b = '.$b.'<br>';
+// Array intersection
+$a = array(1,4,5);
+$b = array(4,5,6);
+$c = array();
+	
+	for ($i=0;$i<count($a);$i++) {
+		for ($j=0;$j<count($b);$j++) {
+			if ($a[$i] == $b[$j]) {
+				$c[] = $b[$j];
+			}
+		}
+	}
+print_r($c);
+
+
+// prime number
+
+function checkprime($num){
+	for ($i=1;$i<=$num;$i++) {
+		$counter =0;
+		for ($j=1;$j<=$num;$j++) {
+			if ($i % $j == 0 ) {
+				$counter++;
+			}
+		}
+		if ($counter == 2) {
+			echo 'yes '.$i." is prime";
+		}
+	}
+
+}checkprime(20);
+
+
+// check common chars in two strings
+
+$str1 = 'tinkesh';
+$str2 = 'ankit jain';
+$arr = array();
+for($i=0;$i<strlen($str1); $i++) {
+	for($j=0;$j<strlen($str2); $j++) {
+		if ($str1[$i] == $str2[$j]) {
+			$arr[] = $str2[$i];
+		}
+	}
+}print_r($arr);
+
+// Count chars in string
+$str = 'Binaya Lenka Tinkesh';
+$unique = array();
+for ($i=0;$i<strlen($str);$i++) {
+	$char = substr($str,$i,1);
+	echo 'Charater '.$char."<br>";
+	if (!array_key_exists($char, $unique)) {
+		$unique[$char] = 1;
+	} else {
+		$unique[$char]++;
+	}
+}print_r($unique);
+
+*
+**
+***
+****
+*****
+	*
+   **
+  ***
+ ****
+*****
+for ($i=1; $i<=5;$i++) {
+	$spaces = 
+	for ($j=1; $j<=$i;$j++) {
+		for ($k=4; $k<=1;$k--) {
+			echo '&nbsp;';
+		}
+		echo '*';
+	}
+	echo '<br />';
+}
+
+for ($i=1; $i<=5;$i++) {
+	
+	for ($j=1; $j<=$i;$j++) {
+		
+		for ($k=4; $k<=1;$k--) {
+			echo 'space';
+		}echo ' <br>';
+		echo '*';
+	}
+	echo '<br />';
+CREATE TRIGGER agecheck BEFORE INSERT ON people FOR EACH ROW IF NEW.age < 0 THEN SET NEW.age = 0; END IF;
+
+preg_match("/<[^<]+>/",$string,$m)

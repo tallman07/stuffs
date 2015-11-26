@@ -1,0 +1,25 @@
+design patterns (Factory, singleton, MVC, Front controller & Strategy)
+Serialize vs unserialize and advantages(http://wordpress.stackexchange.com/questions/183475/why-wordpress-choose-data-serialization-over-json-encode)
+Polymorphism
+JSON vs XML
+Encapsulation
+Data abstraction
+Abstract class and interface
+overloading and oveerrding
+Magic methods
+static vs self
+final class
+Type hinting
+How achive multiple inheritance
+Static binding and late binding
+Namespace
+Magic methods
+Why create abstract clas and interface
+object iteration
+Object cloning
+union 
+
+Factory patterns 
+
+seth sabar
+
